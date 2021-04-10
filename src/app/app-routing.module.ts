@@ -1,7 +1,35 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { TasksComponent } from './components/tasks/tasks.component'
+import { PrivateTasksComponent} from './components/private-tasks/private-tasks.component'
+import { SigninComponent } from './components/signin/signin.component'
+import { SignupComponent } from './components/signup/signup.component'
+import { MainComponent } from './components/main/main.component'
+const routes: Routes = [
+  {
+    path : '',
+    redirectTo:'/main',
+    pathMatch: 'full'
+},
+  {
+    path: 'main',
+    component: MainComponent
+  },
+  {
+    path: 'private',
+    component: PrivateTasksComponent
+  },
+  {
+    path: 'signin',
+    component: SigninComponent
+  },
+  {
+    path: 'signup',
+    component: SignupComponent
+  }
 
-const routes: Routes = [];
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
