@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule,HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -9,6 +9,9 @@ import { TasksComponent } from './components/tasks/tasks.component';
 import { PrivateTasksComponent } from './components/private-tasks/private-tasks.component';
 import { MainComponent } from './components/main/main.component';
 import { FormsModule } from "@angular/forms";
+import {AuthGuard} from './auth.guard';
+import {TokenInterceptorService} from './services/token-interceptor.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +27,16 @@ import { FormsModule } from "@angular/forms";
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+  
+    }
+  ],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
