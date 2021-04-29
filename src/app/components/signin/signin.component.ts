@@ -9,7 +9,7 @@ import {Router} from '@angular/router'
 export class SigninComponent implements OnInit {
 user = {
   email:'',
- username:'',
+  username:'',
   password:''
 }
   constructor(  private authservice: AuthService,

@@ -8,16 +8,20 @@ export class AuthService {
 private URL = 'http://localhost:3000'
   constructor(private http:HttpClient,private router: Router) { }
   signUp(user){
+    console.log(user.json())
    return this.http.post<any>(this.URL+'/signup',user);
    
   }
   signIn(user){
+    console.log(user.json())
     return this.http.post<any>(this.URL+'/login',user);
+    
   }
   loggedIn(){
     return !!localStorage.getItem('token');
   }
   getToken(){
+  
     return localStorage.getItem('token');
   }
   logOut(){

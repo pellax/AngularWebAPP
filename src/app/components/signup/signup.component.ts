@@ -27,9 +27,15 @@ user = {
     .subscribe(
       res => {
         console.log(res);
-        localStorage.setItem('token',res.token);
-        this.router.navigate(['/private']);
-        
+        if(res.message == 'ok')
+        {
+        //localStorage.setItem('token',res.token);
+        console.log('User created successfuly')
+        this.router.navigate(['/signin']);
+        }
+        else {
+          this.router.navigate(['/signin/error'])
+        }
       },
       err => console.log(err)
       )
