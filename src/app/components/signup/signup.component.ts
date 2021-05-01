@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService,TokenPayload} from '../../services/auth.service';
+import {AuthService} from '../../services/auth.service';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-signup',
@@ -7,48 +7,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  credentials: TokenPayload = {
-    email: '',
-    name: '',
-    password: ''
-  };
+
+  user = {
+    username:'',
+    email:'',
+    password:''
+  }
   constructor(
     private authService: AuthService,
     private router: Router
-    )
-     { 
+    ) { }
 
+  ngOnInit() {
   }
 
-  ngOnInit(): void {
-  }
-  register() {
-    this.authService.register(this.credentials).subscribe(() => {
-      this.router.navigate(['/signin']);
-    }, (err) => {
-      console.error(err);
-      
-    });
-  }
-}
-  /*signUp(){
+  signUp() {
     this.authService.signUp(this.user)
-    .subscribe(
-      res => {
-        console.log(res);
-        if(res.message == 'ok')
-        {
-        //localStorage.setItem('token',res.token);
-        console.log('User created successfuly')
-        this.router.navigate(['/signin']);
-        }
-        else {
-          this.router.navigate(['/signin/error'])
-        }
-      },
-      err => console.log(err)
+      .subscribe(
+        res => {
+          console.log(res);
+          localStorage.setItem('token', res.token);
+          this.router.navigate(['/signin']);
+        },
+        err => console.log(err)
       )
-    
-    }
+  }
 
-}*/
+}

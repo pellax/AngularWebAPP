@@ -1,5 +1,5 @@
 import { Component, OnInit, ɵɵtrustConstantResourceUrl } from '@angular/core';
-import { AuthService,TokenPayload} from '../../services/auth.service';
+import { AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router'
 @Component({
   selector: 'app-signin',
@@ -7,9 +7,9 @@ import {Router} from '@angular/router'
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
-  credentials: TokenPayload = {
-    email: '',
-    password: ''
+  user = {
+    email:'',
+    password:''
   };
 
   constructor(  private authservice: AuthService,
@@ -17,6 +17,7 @@ export class SigninComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  /*
   login() {
     this.authservice.login(this.credentials).subscribe(() => {
       this.router.navigate(['/private'])
@@ -25,7 +26,7 @@ export class SigninComponent implements OnInit {
     });
   }
 }
-  /*
+  */
   signIn(){
     this.authservice.signIn(this.user)
     .subscribe(
@@ -42,4 +43,4 @@ export class SigninComponent implements OnInit {
 
   }
 
-}*/
+}

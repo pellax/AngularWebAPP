@@ -1,19 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService, UserDetails } from '../../services/auth.service';
+import { TasksService } from 'src/app/services/tasks.service';
+import { AuthService} from '../../services/auth.service';
+import {HttpErrorResponse} from '@angular/common/http'
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-private-tasks',
   templateUrl: './private-tasks.component.html',
   styleUrls: ['./private-tasks.component.css']
 })
 export class PrivateTasksComponent implements OnInit {
-  details: UserDetails;
-  constructor(private auth:AuthService) { }
-
-  ngOnInit() {    
-    this.auth.profile().subscribe(user => {
-      this.details = user;
-    }, (err) => {
-      console.error(err);
-    });
+  
+  constructor(private taskService:TasksService,private router:Router) { }
+  privateTasks = [];
+  ngOnInit() {
+    this.taskService.getPrivateTasks()
+      .subscribe(
+        res => this.privateTasks = res,
+        err => {
+          if (err instanceof HttpErrorResponse) {
+            if (err.status === 401) {
+              this.router.navigate(['/signin']);
+            }
+          }
+        }
+      )
   }
+
 }

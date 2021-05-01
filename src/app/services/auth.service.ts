@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http'
 import {Router} from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
 import { map } from 'rxjs/internal/operators/map';
-
+/*
 export interface UserDetails {
   _id: string;
   email: string;
@@ -20,16 +20,16 @@ export interface TokenPayload {
   email: string;
   password: string;
   name?: string;
-}
+}*/
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthService {
 private URL = 'http://localhost:3000'
-private token:string;
+//private token:string;
   constructor(private http:HttpClient,private router: Router) { }
-  private request(method: 'post'|'get', type: 'login'|'signup'|'private', user?: TokenPayload): Observable<any> {
+  /*private request(method: 'post'|'get', type: 'login'|'signup'|'private', user?: TokenPayload): Observable<any> {
     let base;
   
     if (method === 'post') {
@@ -97,8 +97,8 @@ private token:string;
   
   public profile(): Observable<any> {
     return this.request('get', 'private');
-  }
-  /*signUp(user){
+  }*/
+  signUp(user){
     //console.log(user.json())
    return this.http.post<any>(this.URL+'/signup',user);
    
@@ -111,11 +111,11 @@ private token:string;
   loggedIn(){
     return !!localStorage.getItem('token');
   }
-  /*getToken(){
+  getToken(){
   
     return localStorage.getItem('token');
   }
-  */
+  
  
   logOut(){
     localStorage.removeItem('token');
