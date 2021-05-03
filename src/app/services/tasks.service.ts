@@ -12,6 +12,9 @@ export class TasksService {
     private http: HttpClient
 
   ) { }
+  getProfile(){
+    return this.http.get<any>(this.URL+'/profile');
+  }
   getTasks(){
     return this.http.get<any>(this.URL+'/tasks');
   }

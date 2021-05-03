@@ -13,7 +13,7 @@ export class PrivateTasksComponent implements OnInit {
   constructor(private taskService:TasksService,private router:Router) { }
   privateTasks = [];
   ngOnInit() {
-    this.taskService.getPrivateTasks()
+    this.taskService.getProfile()
       .subscribe(
         res => this.privateTasks = res,
         err => {

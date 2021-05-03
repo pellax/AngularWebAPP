@@ -6,14 +6,17 @@ import {AuthService} from '../services/auth.service';
   providedIn: 'root'
 })
 export class TokenInterceptorService implements HttpInterceptor {
+  private token
   constructor(
     private authService:AuthService
-    ) { }
+    ) {
+      this.token = this.authService.getToken()
+     }
   intercept(req,next)
 {
   const tokenizeRequest = req.clone({
     setHeaders:{
-      Authorization:'Bearer ${this.authService.getToken()}'
+      Authorization:`Bearer ${this.token}`
      
     }
   });
