@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵɵtrustConstantResourceUrl } from '@angular/core';
+import { AuthService} from '../../services/auth.service';
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-my-raspis',
@@ -7,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyRaspisComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authservice: AuthService,
+    private router: Router) { }
 
   ngOnInit(): void {
   }

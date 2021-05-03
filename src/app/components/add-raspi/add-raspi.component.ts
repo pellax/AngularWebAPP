@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵɵtrustConstantResourceUrl } from '@angular/core';
+import { AuthService} from '../../services/auth.service';
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-add-raspi',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-raspi.component.css']
 })
 export class AddRaspiComponent implements OnInit {
-
-  constructor() { }
+raspi={
+  ref:''
+}
+  constructor(private authservice: AuthService,
+    private router: Router) { }
 
   ngOnInit(): void {
   }
+addRaspi(){
 
+}
 }
