@@ -13,10 +13,10 @@ export class TokenInterceptorService implements HttpInterceptor {
 {
   const tokenizeRequest = req.clone({
     setHeaders:{
-      Authorization:'Bearer ${this.AuthSerice.getToken()}'
+      Authorization:'Bearer ${this.authService.getToken()}'
      
     }
-  })
+  });
   return next.handle(tokenizeRequest);
 }
   

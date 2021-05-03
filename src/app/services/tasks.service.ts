@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
 })
 export class TasksService {
   private URL = 'http://localhost:3000'
+  
   constructor(
     private http: HttpClient
 
@@ -17,4 +18,5 @@ export class TasksService {
   getPrivateTasks(){
     return this.http.get<any>(this.URL+'/private-tasks');
   }
+
 }
