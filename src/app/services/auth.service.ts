@@ -27,6 +27,7 @@ export interface TokenPayload {
 
 export class AuthService {
 private URL = 'http://localhost:3000'
+color = ''
 //private token:string;
   constructor(private http:HttpClient,private router: Router) { }
   /*private request(method: 'post'|'get', type: 'login'|'signup'|'private', user?: TokenPayload): Observable<any> {
@@ -121,4 +122,24 @@ private URL = 'http://localhost:3000'
     localStorage.removeItem('token');
     this.router.navigate(['/']);
   }
+  setRed(){
+    this.color='RED'
+    this.router.navigate(['/private/configraspy/editbutton']);
+  }
+  setBlue(){
+    this.color='BLUE'
+    this.router.navigate(['/private/configraspy/editbutton']);
+  }
+  setGreen(){
+    this.color='GREEN'
+    this.router.navigate(['/private/configraspy/editbutton']);
+
+  }
+  getColor(){
+    return this.color
+  }
+  submitButton(button){
+    return this.http.post<any>(this.URL+'/configraspi',button)
+  }
+
 }

@@ -16,6 +16,9 @@ export class SigninComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
+    setTimeout(() => {
+      this.router.navigate(['/signin']);
+  }, 5000); 
   }
   /*
   login() {
@@ -37,6 +40,7 @@ export class SigninComponent implements OnInit {
 
       },
         err => {
+          this.router.navigate(['/signin/wrongpass'])
           console.log(err)
         }
     )

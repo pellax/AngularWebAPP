@@ -14,6 +14,11 @@ import {TokenInterceptorService} from './services/token-interceptor.service';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AddRaspiComponent } from './components/add-raspi/add-raspi.component';
 import { MyRaspisComponent } from './components/my-raspis/my-raspis.component';
+import { WrongpassComponent } from './components/wrongpass/wrongpass.component';
+import { UserexistsComponent } from './components/userexists/userexists.component';
+import { UserokComponent } from './components/userok/userok.component';
+import { ConfigraspyComponent } from './components/configraspy/configraspy.component';
+import { EditbuttonComponent } from './components/editbutton/editbutton.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +30,12 @@ import { MyRaspisComponent } from './components/my-raspis/my-raspis.component';
     MainComponent,
     ProfileComponent,
     AddRaspiComponent,
-    MyRaspisComponent
+    MyRaspisComponent,
+    WrongpassComponent,
+    UserexistsComponent,
+    UserokComponent,
+    ConfigraspyComponent,
+    EditbuttonComponent
   ],
   imports: [
     BrowserModule,
