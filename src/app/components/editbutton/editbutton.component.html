@@ -2,17 +2,17 @@
     <div class="col-md-4 mx-auto">
         <div class="card">
             <div class="card-header">
-                Sign In
+                Configure Raspi
             </div>
             <div class="card-body">
                 <form (submit)="submitButton()">
                     <div class="form-group">
-                        <label for="staticEmail" class="col-sm-2 col-form-label">Nametag</label>
-                        <input type="text" [(ngModel)]="button.nametag"name="nametag" class="form-control" placeholder="Email" required autofocus>
+                        <label for="staticEmail" class="col-lg-2 col-form-label">Nametag</label>
+                        <input type="text" [(ngModel)]="button.nametag"name="nametag" class="form-control" placeholder="Nametag" required autofocus>
                     </div>
                     <div class="form-group">
-                        <label for="staticEmail" class="col-sm-2 col-form-label">Purpose</label>
-                        <input type="password" [(ngModel)]="button.purpose" name="purpose" class="form-control" placeholder="Password" required>
+                        <label for="staticEmail" class="col-lg-2 col-form-label">Purpose</label>
+                        <input type="text" [(ngModel)]="button.purpose" name="purpose" class="form-control" placeholder="Purpose" required>
                     </div>
                     <fieldset class="form-group">
                         <legend class="mt-4">Frequency</legend>
@@ -28,9 +28,9 @@
                            Weekly
                           </label>
                         </div>
-                        <div class="form-check disabled">
+                        <div class="form-check">
                           <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled="">
+                            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" >
                            Monthly
                           </label>
                         </div>

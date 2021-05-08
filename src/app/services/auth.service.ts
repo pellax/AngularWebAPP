@@ -124,15 +124,15 @@ color = ''
   }
   setRed(){
     this.color='RED'
-    this.router.navigate(['/private/configraspy/editbutton']);
+    this.router.navigate(['/private/configraspi/editbutton']);
   }
   setBlue(){
     this.color='BLUE'
-    this.router.navigate(['/private/configraspy/editbutton']);
+    this.router.navigate(['/private/configraspi/editbutton']);
   }
   setGreen(){
     this.color='GREEN'
-    this.router.navigate(['/private/configraspy/editbutton']);
+    this.router.navigate(['/private/configraspi/editbutton']);
 
   }
   getColor(){
