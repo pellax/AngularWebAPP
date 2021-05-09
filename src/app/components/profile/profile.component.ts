@@ -12,12 +12,21 @@ username = ''
   constructor(private userdataService:UserdataService) { 
     this.token = localStorage.getItem('token')
     
+    
 
   }
 
   ngOnInit(): void {
-    this.userdataService.getUserData(this.token)
-    .subscribe
+    this.userdataService.getUserData()
+    .subscribe(
+      res => {
+      console.log(res)
+      this.username = res
+      },
+
+      err =>console.log(err)
+    )
+
   }
 
 }

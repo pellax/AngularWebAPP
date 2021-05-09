@@ -12,9 +12,10 @@ export class UserdataService {
   constructor(private router:Router,private http:HttpClient) { 
 
   }
-  getUserData(token){
+  getUserData(){
 
-    return this.http.get<any>(this.URL+'/profile',token)
+    return this.http.get<any>(this.URL+'/profile')
+   
   
   
   }

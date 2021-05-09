@@ -9,7 +9,8 @@ import {Router} from '@angular/router'
 })
 export class AddRaspiComponent implements OnInit {
 raspi={
-  ref:''
+  ref:'',
+  pin:''
 }
   constructor(private authservice: AuthService,
     private router: Router) { }

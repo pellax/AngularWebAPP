@@ -2,9 +2,16 @@
     <div class="col-lg-7 mx-auto ">
         <div class="jumbotron">
             <h1 class="display-3">Smart Mirror</h1>
-            <p class="lead">Welcome to your Smart Mirror app</p>
+            <p class="lead">Raspberry configuration</p>
             <hr class="my-4">
-            <p>Please Sign in and enjoy </p>
+            <p>Please select a Raspi and a button to configure </p>
+            <div class="form-group">
+              <label for="exampleSelect1" class="form-label mt-4"></label>
+              <select class="form-select" id="exampleSelect1">
+                <option>No raspis added</option>
+               
+              </select>
+            </div>
             <p class="lead">
             
               <a class="btn btn-warning" (click)= "submitRed()" role="button">Edit Red Button</a>
