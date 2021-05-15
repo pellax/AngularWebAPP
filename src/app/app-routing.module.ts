@@ -14,6 +14,9 @@ import {AuthGuard} from './auth.guard'
 import {UserokComponent} from './components/userok/userok.component'
 import {ConfigraspyComponent} from './components/configraspy/configraspy.component'
 import { EditbuttonComponent } from './components/editbutton/editbutton.component'
+import { ChangepasswordComponent } from './components/changepassword/changepassword.component';
+import { ChangepasswordokComponent} from './components/changepasswordok/changepasswordok.component';
+import { ChangepasswordfailComponent } from './components/changepasswordfail/changepasswordfail.component';
 
 const routes: Routes = [
   {
@@ -69,6 +72,18 @@ const routes: Routes = [
 {
   path:'private/configraspi/editbutton',
   component: EditbuttonComponent
+},
+{
+  path:'private/profile/changepassword',
+  component: ChangepasswordComponent
+},
+{
+  path:'private/profile/changepassword/changepasswordok',
+  component: ChangepasswordokComponent
+},
+{
+  path:'private/profile/changepassword/changepasswordfail',
+  component: ChangepasswordfailComponent
 }
 
 ];
