@@ -7,26 +7,27 @@ import { UserdataService } from 'src/app/services/userdata.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-token =''
+//token =''
 username = ''
   constructor(private userdataService:UserdataService) { 
-    this.token = localStorage.getItem('token')
+   
+   // this.token = localStorage.getItem('token')
     
     
 
   }
 
   ngOnInit(): void {
+   
     this.userdataService.getUserData()
     .subscribe(
       res => {
       console.log(res)
-      this.username = res
+      this.username = res.user;
       },
 
       err =>console.log(err)
     )
-
-  }
+    }
 
 }
