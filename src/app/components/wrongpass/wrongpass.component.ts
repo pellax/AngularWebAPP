@@ -10,9 +10,13 @@ import {Router} from '@angular/router'
 })
 export class WrongpassComponent implements OnInit {
 
-  constructor(authService:AuthService, router:Router) { }
+  constructor(authService:AuthService, private router:Router) { }
 
   ngOnInit(): void {
+    setTimeout(() => {
+      this.router.navigate(['/signin']);
+  }, 5000); 
   }
-
 }
+
+
