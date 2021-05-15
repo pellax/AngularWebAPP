@@ -19,6 +19,9 @@ import { UserexistsComponent } from './components/userexists/userexists.componen
 import { UserokComponent } from './components/userok/userok.component';
 import { ConfigraspyComponent } from './components/configraspy/configraspy.component';
 import { EditbuttonComponent } from './components/editbutton/editbutton.component';
+import { ChangepasswordComponent } from './components/changepassword/changepassword.component';
+import { ChangepasswordokComponent } from './components/changepasswordok/changepasswordok.component';
+import { ChangepasswordfailComponent } from './components/changepasswordfail/changepasswordfail.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { EditbuttonComponent } from './components/editbutton/editbutton.componen
     UserexistsComponent,
     UserokComponent,
     ConfigraspyComponent,
-    EditbuttonComponent
+    EditbuttonComponent,
+    ChangepasswordComponent,
+    ChangepasswordokComponent,
+    ChangepasswordfailComponent
   ],
   imports: [
     BrowserModule,
