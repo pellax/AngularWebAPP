@@ -21,10 +21,12 @@ changePass(){
   this.changePassword.changePassword(this.pass)
   .subscribe(
     res =>{
+      console.log(res)
       this.router.navigate(['/private/profile/changepassword/changepasswordok'])
 
     },
     err => {
+      console.log(err)
       this.router.navigate(['/private/profile/changepassword/changepasswordfail'])
     }
   )

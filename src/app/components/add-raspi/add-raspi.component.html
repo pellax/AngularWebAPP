@@ -8,7 +8,7 @@
                 <form (submit)="addRaspi()">
                     
                     <div class="form-group">
-                        <input type="text" [(ngModel)]="raspi.ref" name="reference" class="form-control" placeholder="Enter the reference of you Raspi" required>
+                        <input type="text" [(ngModel)]="raspi.serial_number" name="reference" class="form-control" placeholder="Enter the reference of you Raspi" required>
                     </div>
                     <div class="form-group">
                         <input type="password" [(ngModel)]="raspi.pin" name="pin" class="form-control" placeholder="Enter a pin for your Raspi" required>

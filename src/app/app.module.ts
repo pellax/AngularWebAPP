@@ -22,6 +22,8 @@ import { EditbuttonComponent } from './components/editbutton/editbutton.componen
 import { ChangepasswordComponent } from './components/changepassword/changepassword.component';
 import { ChangepasswordokComponent } from './components/changepasswordok/changepasswordok.component';
 import { ChangepasswordfailComponent } from './components/changepasswordfail/changepasswordfail.component';
+import { RaspiaddedokComponent } from './components/raspiaddedok/raspiaddedok.component';
+import { RaspiaddedfailComponent } from './components/raspiaddedfail/raspiaddedfail.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { ChangepasswordfailComponent } from './components/changepasswordfail/cha
     EditbuttonComponent,
     ChangepasswordComponent,
     ChangepasswordokComponent,
-    ChangepasswordfailComponent
+    ChangepasswordfailComponent,
+    RaspiaddedokComponent,
+    RaspiaddedfailComponent
   ],
   imports: [
     BrowserModule,

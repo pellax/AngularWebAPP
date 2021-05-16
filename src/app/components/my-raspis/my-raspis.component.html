@@ -2,7 +2,26 @@
     <div class="col-lg-7 mx-auto ">
         <div class="jumbotron">
             <h1 class="display-3">Smart Mirror</h1>
-            <p class="lead">No raspis added at this moment</p>
+            <ng-container !getState()else elsestate>
+            <p class="lead" >No raspis added at this moment</p>
+          </ng-container>
+            <ng-template #elsestate>
+            <fieldset class="form-group">
+              <legend class="mt-4">List of Raspberrys</legend>
+              <div class="form-check"*ngFor= "let lista de raspis" >
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option$lista de raspis" checked="">
+                  {{raspi.serial_number}}
+                </label>
+              </div>
+              
+            </fieldset>
+          </ng-template>
+            
+            
+            
+            
+            
             <hr class="my-4">
             <p>Click to add raspi to add your first raspberry</p>
             <p class="lead">
