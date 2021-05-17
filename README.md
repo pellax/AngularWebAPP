@@ -1,7 +1,37 @@
+
 # Frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.7.
+##Steps to run the code
+### Update ubuntu
+> sudo apt-get update 
+### Install npm 
+> sudo apt install npm 
+### Install typescript 
+on ubuntu
+> sudo npm install typescript --save-dev
+### Add repository for node
+> curl -sL https://deb.nodesource.com/setup_14.x | bash -
+### Install node.js
+> apt-get install nodejs -y
+### Check version
+node --version
 
+### You should see something like
+> v14.7.0
+### Install cli latest version
+> npm install npm@latest -g
+### Check cli version
+> npm --version 
+### You should see something like 
+> 6.14.7
+### Install angular latest version
+> npm install -g @angular/cli
+### Check version
+> ng version 
+## To run the server
+### Inside frontend folder run
+> ng serve 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
