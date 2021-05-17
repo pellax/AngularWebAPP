@@ -2,31 +2,34 @@
     <div class="col-lg-7 mx-auto ">
         <div class="jumbotron">
             <h1 class="display-3">Smart Mirror</h1>
-            <ng-container !getState()else elsestate>
+            <ng-container *ngIf="!this.getState();else elsestate">
             <p class="lead" >No raspis added at this moment</p>
           </ng-container>
             <ng-template #elsestate>
-            <fieldset class="form-group">
+            <fieldset class="form-group" (submit)=deleteRaspi()>
               <legend class="mt-4">List of Raspberrys</legend>
-              <div class="form-check"*ngFor= "let lista de raspis" >
+              <div class="form-check" *ngFor = "let raspi of raspis;let i = index "[atr.data-index]="i" >
+                
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option$lista de raspis" checked="">
-                  {{raspi.serial_number}}
+                  <input type="radio" class="form-check-input" (change)= radioChangehandler($event) name="frequencies" id="optionsRadios1" value="{raspi.serial_number}}" checked="">
+                  {{raspi.serial_number}} 
                 </label>
               </div>
               
             </fieldset>
-          </ng-template>
+          
             
             
             
             
             
             <hr class="my-4">
+          </ng-template>
             <p>Click to add raspi to add your first raspberry</p>
             <p class="lead">
             
-              <a class="btn btn-primary btn-lg" routerLink="/addraspi" role="button">Add Raspi</a>
+              <a class="btn btn-secondary btn-lg" routerLink="/addraspi" role="button">Add Raspi</a>
+              <a class="btn btn-primary btn-lg" routerLink="/addraspi" role="button">Delete Raspi</a>
               
             
             </p>

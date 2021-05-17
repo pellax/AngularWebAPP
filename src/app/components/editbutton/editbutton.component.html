@@ -17,13 +17,14 @@
                         <input type="text" [(ngModel)]="button.purpose" name="purpose" class="form-control" placeholder="Goal" required>
                     </div>
                     <fieldset class="form-group">
-                        <legend class="mt-4">Frequency</legend>
-                        <div class="form-check">
-                          <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-                           Daily
-                          </label>
-                        </div>
+                      <legend class="mt-4">Frequency</legend>
+                      <div class="form-check" *ngFor = "let frequency of frequencies">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="frequencies" id="optionsRadios1" value="{{frequency}}" checked="">
+                         {{frequency}}
+                        </label>
+                      </div>
+                      <!--
                         <div class="form-check">
                           <label class="form-check-label">
                             <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
@@ -36,6 +37,7 @@
                            Monthly
                           </label>
                         </div>
+                        -->
                       </fieldset>
                     <button class="btn btn-success btn-block">
                         Change Config
@@ -43,6 +45,7 @@
                 </form>
             </div>
         </div>
+
 
         <div class="card" *ngSwitchCase= "'GREEN'">
           <div class="card-header">
@@ -62,13 +65,13 @@
                   </div>
                   <fieldset class="form-group">
                       <legend class="mt-4">Frequency</legend>
-                      <div class="form-check">
+                      <div class="form-check" *ngFor = "let frequency of frequencies">
                         <label class="form-check-label">
-                          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-                         Dayly
+                          <input type="radio" (change)="handlerEvent($event)"class="form-check-input" name="frequencies" id="optionsRadios1" value="{{frequency}}" checked="">
+                         {{frequency}}
                         </label>
                       </div>
-                      <div class="form-check">
+                   <!--   <div class="form-check">
                         <label class="form-check-label">
                           <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
                          Weekly
@@ -79,7 +82,7 @@
                           <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" >
                          Monthly
                         </label>
-                      </div>
+                      </div>-->
                     </fieldset>
                   <button class="btn btn-success btn-block">
                       Change Config
@@ -104,13 +107,14 @@
                     <input type="text" [(ngModel)]="button.purpose" name="purpose" class="form-control" placeholder="Goal" required>
                 </div>
                 <fieldset class="form-group">
-                    <legend class="mt-4">Frequency</legend>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-                       Dayly
-                      </label>
-                    </div>
+                  <legend class="mt-4">Frequency</legend>
+                  <div class="form-check" *ngFor = "let frequency of frequencies">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="frequencies" id="optionsRadios1" value="{{frequency}}" checked="">
+                     {{frequency}}
+                    </label>
+                  </div>
+                  <!--
                     <div class="form-check">
                       <label class="form-check-label">
                         <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
@@ -122,7 +126,7 @@
                         <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" >
                        Monthly
                       </label>
-                    </div>
+                    </div>-->
                   </fieldset>
                 <button class="btn btn-success btn-block">
                     Change Config

@@ -1,4 +1,4 @@
-import { Component, OnInit, ɵɵtrustConstantResourceUrl } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router'
 import { RaspberryService } from 'src/app/services/raspberry.service';
@@ -10,7 +10,8 @@ import { state } from '@angular/animations';
   styleUrls: ['./my-raspis.component.css']
 })
 export class MyRaspisComponent implements OnInit {
-raspi=[];
+raspis=[];
+selectedRef:string ='';
 state:boolean=false;
   constructor(private authservice: AuthService,
     private router: Router,private raspiService:RaspberryService) { }
@@ -20,14 +21,20 @@ state:boolean=false;
     .subscribe(
       res =>
       { 
-        this.raspi= res
-        
+        console.log(res)
+        this.raspis= res
+        console.log(this.raspis[0].serial_number)
+        this.state = true;
       },
      err => {
      console.log(err) 
-     this.state = true;
+    
     }
     )
+
+  }
+  radioChangehandler(event:any){
+this.selectedRef= event.target.value;
 
   }
  getState(){
