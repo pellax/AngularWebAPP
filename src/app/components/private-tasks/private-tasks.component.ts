@@ -17,6 +17,7 @@ export class PrivateTasksComponent implements OnInit {
       .subscribe(
         res => this.privateTasks = res,
         err => {
+          console.log(err)
           if (err instanceof HttpErrorResponse) {
             if (err.status === 401) {
               this.router.navigate(['/signin']);

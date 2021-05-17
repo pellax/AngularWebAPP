@@ -15,6 +15,8 @@ button =
   purpose:'',
   frequency:''
 };
+frequencies =[ 'Daily','Weekly','Monthly',];
+selectedFrequency:string ='';
   constructor(public authService:AuthService,private router:Router) { 
     this.button.color =this.authService.getColor()
   }
@@ -37,7 +39,9 @@ button =
   )
 
 }
-
+handlerEvent(event:any){
+this.selectedFrequency= event.target.value;
+}
 
 
 }
