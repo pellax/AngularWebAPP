@@ -11,7 +11,7 @@
               <div class="form-check" *ngFor = "let raspi of raspis;let i = index "[atr.data-index]="i" >
                 
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" (change)= radioChangehandler($event) name="frequencies" id="optionsRadios1" value="{raspi.serial_number}}" checked="">
+                  <input type="radio" class="form-check-input" (change)= radioChangehandler($event) name="frequencies" id="optionsRadios1" value="{{raspi.serial_number}}" checked="">
                   {{raspi.serial_number}} 
                 </label>
               </div>
@@ -25,7 +25,7 @@
             
             <hr class="my-4">
           </ng-template>
-            <p>Click to add raspi to add your first raspberry</p>
+            <p>Click to add raspi to add  another raspberry</p>
             <p class="lead">
             
               <a class="btn btn-secondary btn-lg" routerLink="/addraspi" role="button">Add Raspi</a>
