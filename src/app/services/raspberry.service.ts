@@ -12,7 +12,11 @@ export class RaspberryService {
   addRaspy(raspi){
     return this.http.post<any>(this.URL+'/addraspy',raspi);
   }
+  deleteRaspy(raspi){
+    return this.http.post<any>(this.URL+'/deleteraspy',raspi);
+  }
   listRaspis(){
     return this.http.get<any>(this.URL+'/myraspis');
   }
+  
 }

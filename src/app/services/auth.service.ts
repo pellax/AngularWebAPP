@@ -28,6 +28,8 @@ export interface TokenPayload {
 export class AuthService {
 private URL = 'http://localhost:3000'
 color = ''
+reference_number =''
+
 //private token:string;
   constructor(private http:HttpClient,private router: Router) { }
   /*private request(method: 'post'|'get', type: 'login'|'signup'|'private', user?: TokenPayload): Observable<any> {
@@ -139,7 +141,12 @@ color = ''
     return this.color
   }
   submitButton(button){
-    return this.http.post<any>(this.URL+'/configraspi',button)
+    return this.http.post<any>(this.URL+'/setbutton',button)
   }
-
+  setReference(ref){
+  this.reference_number=ref;
+  }
+  getReference(){
+    return this.reference_number;
+  }
 }

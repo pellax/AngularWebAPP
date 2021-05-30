@@ -19,6 +19,8 @@ import { ChangepasswordokComponent} from './components/changepasswordok/changepa
 import { ChangepasswordfailComponent } from './components/changepasswordfail/changepasswordfail.component';
 import { RaspiaddedokComponent } from './components/raspiaddedok/raspiaddedok.component';
 import { RaspiaddedfailComponent } from './components/raspiaddedfail/raspiaddedfail.component';
+import { DeleteraspiokComponent } from './components/deleteraspiok/deleteraspiok.component';
+import { DeleteraspifailComponent } from './components/deleteraspifail/deleteraspifail.component';
 
 const routes: Routes = [
   {
@@ -94,6 +96,15 @@ const routes: Routes = [
 {
   path:'addraspi/raspiaddedfail',
   component: RaspiaddedfailComponent
+},
+{
+  path:'myraspis/deleteraspiok',
+  component: DeleteraspiokComponent
+},
+{
+  path:'myraspis/deleteraspifail',
+  component: DeleteraspifailComponent
+
 }
 
 ];

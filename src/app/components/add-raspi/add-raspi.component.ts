@@ -22,9 +22,11 @@ addRaspi(){
 this.raspberryService.addRaspy(this.raspi)
 .subscribe(
   res =>{
+    console.log(res)
      this.router.navigate(['/addraspi/raspiaddedok']);
   },
   err =>{
+    console.log(err)
     this.router.navigate(['/addraspi/raspiaddedfail']);
 
 
