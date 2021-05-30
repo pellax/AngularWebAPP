@@ -24,6 +24,9 @@ import { ChangepasswordokComponent } from './components/changepasswordok/changep
 import { ChangepasswordfailComponent } from './components/changepasswordfail/changepasswordfail.component';
 import { RaspiaddedokComponent } from './components/raspiaddedok/raspiaddedok.component';
 import { RaspiaddedfailComponent } from './components/raspiaddedfail/raspiaddedfail.component';
+import { DeleteraspiokComponent } from './components/deleteraspiok/deleteraspiok.component';
+import { DeleteraspifailComponent } from './components/deleteraspifail/deleteraspifail.component';
+import { ConfigureokComponent } from './components/configureok/configureok.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,10 @@ import { RaspiaddedfailComponent } from './components/raspiaddedfail/raspiaddedf
     ChangepasswordokComponent,
     ChangepasswordfailComponent,
     RaspiaddedokComponent,
-    RaspiaddedfailComponent
+    RaspiaddedfailComponent,
+    DeleteraspiokComponent,
+    DeleteraspifailComponent,
+    ConfigureokComponent
   ],
   imports: [
     BrowserModule,

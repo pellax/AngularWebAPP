@@ -13,6 +13,7 @@ export class MyRaspisComponent implements OnInit {
 raspis=[];
 selectedRef:string ='';
 state:boolean=false;
+serial_number = ''
   constructor(private authservice: AuthService,
     private router: Router,private raspiService:RaspberryService) { }
 
@@ -35,9 +36,25 @@ state:boolean=false;
   }
   radioChangehandler(event:any){
 this.selectedRef= event.target.value;
-
+this.serial_number= this.selectedRef
   }
  getState(){
    return state;
+ }
+ deleteRaspi(){
+ this.raspiService.deleteRaspy(this.serial_number)
+ .subscribe(
+   res =>{
+
+
+   },
+   err =>{
+
+   }
+
+ )
+ }
+ addRaspi(){
+
  }
 }

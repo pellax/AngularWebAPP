@@ -141,7 +141,7 @@ reference_number =''
     return this.color
   }
   submitButton(button){
-    return this.http.post<any>(this.URL+'/configraspi',button)
+    return this.http.post<any>(this.URL+'/setbutton',button)
   }
   setReference(ref){
   this.reference_number=ref;
